@@ -25,7 +25,7 @@
 ## 🎨 Дизайн
 
 <p align="center">
-  <img src="https://via.placeholder.com/800x400/0d0d0d/9146ff?text=TRANS_CRYPT+INTERFACE" alt="screenshot" width="100%">
+  <img src="https://via.placeholder.com/800x400/0d0d0d/9146ff?text=TRANS_CRYPT+INTERFACE" alt="" width="100%">
 </p>
 
 **Pixel Cyberpunk Edition** — футуристичный интерфейс в стиле киберпанк с фирменными цветами Twitch:
