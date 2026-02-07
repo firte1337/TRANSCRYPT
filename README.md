@@ -2,7 +2,7 @@
 
 <img src="https://img.shields.io/badge/TRANS_CRYPT-v3.0.0-9146ff?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTEyIDJMMTIgMjJNMTIgMTJMMTIgMTJNMTIgMjJMMTIgMjJNMTIgMTJMMTIgMTJNMTIgMTJMMTIgMTIiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+" alt="logo">
 
-# **[ TRANS_CRYPT ]**
+# **[ TRANSCRYPT ]**
 
 ### ⚡ Мульти-инструмент для разработчиков и не только
 
@@ -28,11 +28,11 @@
   <img src="https://via.placeholder.com/800x400/0d0d0d/9146ff?text=TRANS_CRYPT+INTERFACE" alt="screenshot" width="100%">
 </p>
 
-**Twitch Cyberpunk Edition** — футуристичный интерфейс в стиле киберпанк с фирменными цветами Twitch:
+**Pixel Cyberpunk Edition** — футуристичный интерфейс в стиле киберпанк с фирменными цветами Twitch:
 
 | Цвет | HEX | Использование |
 |------|-----|---------------|
-| 💜 Twitch Purple | `#9146ff` | Основной акцент |
+| 💜  Purple | `#9146ff` | Основной акцент |
 | 💜 Dark Purple | `#5c16c5` | Границы, тени |
 | 🤍 Arctic White | `#f0f6f0` | Текст |
 | 🖤 Void Black | `#0d0d0d` | Фон |
