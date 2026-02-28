@@ -339,11 +339,12 @@
 
                     <!-- telegram direct секция -->
                     <div class="telegram-section">
+   <div class="telegram-section">
     <span class="telegram-label">ИЛИ ПИШИТЕ В ТЕЛЕГРАМ:</span>
-    <a href="https://t.me/fierte1337?direct" target="_blank" class="telegram-display">
+    <div class="email-display" onclick="openTelegram()">
         @fierte1337
-    </a>
-    <div class="telegram-hint">[ НАЖМИТЕ ЧТОБЫ ОТКРЫТЬ ]</div>
+    </div>
+    <div class="email-hint">[ НАЖМИТЕ ЧТОБЫ ОТКРЫТЬ ]</div>
 </div>
 
                 </div>
@@ -378,21 +379,9 @@
         }
 
         // Copy email function
-        function copyEmail() {
-            const email = 'your.email@example.com';
-            navigator.clipboard.writeText(email).then(() => {
-                showToast('ПОЧТА СКОПИРОВАНА!');
-            }).catch(() => {
-                // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = email;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                showToast('ПОЧТА СКОПИРОВАНА!');
-            });
-        }
+        function openTelegram() {
+    window.open('https://t.me/fierte1337?direct', '_blank');
+}
     </script>
 </body>
 </html>
