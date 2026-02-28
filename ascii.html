@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII | SILENTBYTE</title>
+    <link rel="icon" type="image/png" href="avatar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="crt">
+    <div class="scanline"></div>
+    <div class="pixel-bg"></div>
+    <canvas id="molecule-canvas"></canvas>
+
+    <!-- Навигация -->
+    <nav>
+        <div class="nav-container">
+            <a href="all.html" class="logo">SILENTBYTE</a>
+            <ul class="nav-links">
+                <li><a href="all.html">ВСЕ</a></li>
+                <li><a href="translit.html">ТРАНСЛИТ</a></li>
+                <li><a href="base64.html">BASE64</a></li>
+                <li><a href="inv.html">INVISIBLE</a></li>
+                <li><a href="pass.html">PASSWORD</a></li>
+                <li><a href="ascii.html" class="active">ASCII</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero секция -->
+    <section class="hero">
+        <h1 class="glitch" data-text="ASCII">ASCII</h1>
+        <p>Генератор ASCII-арта</p>
+    </section>
+
+    <!-- Основной контент -->
+    <div class="container">
+        <div class="tools-grid single">
+            
+            <!-- ASCII Art -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon" style="background: #9932cc; font-size: 8px;">ASCII</div>
+                    <div class="tool-title">ART ГЕНЕРАТОР</div>
+                </div>
+                <div class="tool-body">
+                    <div class="input-group">
+                        <label>Введите текст</label>
+                        <input type="text" id="ascii-input" placeholder="Type something..." value="SILENTBYTE" style="min-height: auto;">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Выберите шрифт</label>
+                        <select id="ascii-font">
+                            <option value="standard">Standard</option>
+                            <option value="block">Block</option>
+                            <option value="small">Small</option>
+                            <option value="banner">Banner</option>
+                        </select>
+                    </div>
+
+                    <button class="btn" onclick="generateAsciiArt()">ГЕНЕРИРОВАТЬ</button>
+
+                    <div class="result-box ascii-output" id="ascii-result"></div>
+                    
+                    <button class="btn secondary" onclick="copyResult('ascii-result')" style="margin-top: 10px;">
+                        КОПИРОВАТЬ
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">Скопировано!</div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-title">[ SILENTBYTE v3.4 ]</div>
+            <div class="copyright">
+                © 2026 МУЛЬТИ-ИНСТРУМЕНТ <br>
+            </div>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="ascii.js"></script>
+    <script>
+        generateAsciiArt();
+    </script>
+</body>
+</html>

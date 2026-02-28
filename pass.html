@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PASSWORD | SILENTBYTE</title>
+    <link rel="icon" type="image/png" href="avatar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="crt">
+    <div class="scanline"></div>
+    <div class="pixel-bg"></div>
+    <canvas id="molecule-canvas"></canvas>
+
+    <!-- Навигация -->
+    <nav>
+        <div class="nav-container">
+            <a href="all.html" class="logo">SILENTBYTE</a>
+            <ul class="nav-links">
+                <li><a href="all.html">ВСЕ</a></li>
+                <li><a href="translit.html">ТРАНСЛИТ</a></li>
+                <li><a href="base64.html">BASE64</a></li>
+                <li><a href="inv.html">INVISIBLE</a></li>
+                <li><a href="pass.html" class="active">PASSWORD</a></li>
+                <li><a href="ascii.html">ASCII</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero секция -->
+    <section class="hero">
+        <h1 class="glitch" data-text="PASSWORD">PASSWORD</h1>
+        <p>Генератор надёжных паролей</p>
+    </section>
+
+    <!-- Основной контент -->
+    <div class="container">
+        <div class="tools-grid single">
+            
+            <!-- Password Generator -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon" style="background: #8000ff; font-size: 8px;">PASS</div>
+                    <div class="tool-title">ГЕНЕРАТОР ПАРОЛЕЙ</div>
+                </div>
+                <div class="tool-body">
+                    <div class="password-display">
+                        <input type="text" id="password-output" class="password-field" readonly value="Нажмите Generate">
+                        <button class="btn secondary" onclick="copyPassword()" style="width: auto; margin-top: 0; padding: 10px 15px;">
+                            COPY
+                        </button>
+                    </div>
+
+                    <div class="strength-meter">
+                        <div class="strength-fill" id="strength-fill"></div>
+                    </div>
+                    <div class="strength-text" id="strength-text">Нажмите Generate</div>
+
+                    <div class="slider-container">
+                        <div class="slider-label">
+                            <span>ДЛИНА</span>
+                            <span id="length-value" style="color: var(--twitch);">16</span>
+                        </div>
+                        <input type="range" id="password-length" min="8" max="64" value="16" oninput="updateLengthDisplay()">
+                    </div>
+
+                    <div class="controls-grid">
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="use-upper" checked>
+                                <span>ABC Верхний регистр</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="use-lower" checked>
+                                <span>abc Нижний регистр</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="use-numbers" checked>
+                                <span>123 Цифры</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="use-symbols" checked>
+                                <span>!@# Символы</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="btn" onclick="generatePassword()">СГЕНЕРИРОВАТЬ</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">Скопировано!</div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-title">[ SILENTBYTE v3.4 ]</div>
+            <div class="copyright">
+                © 2026 МУЛЬТИ-ИНСТРУМЕНТ <br>
+            </div>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="password.js"></script>
+</body>
+</html>

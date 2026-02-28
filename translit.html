@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ТРАНСЛИТ | SILENTBYTE</title>
+    <link rel="icon" type="image/png" href="avatar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="crt">
+    <div class="scanline"></div>
+    <div class="pixel-bg"></div>
+    <canvas id="molecule-canvas"></canvas>
+
+    <!-- Навигация -->
+    <nav>
+        <div class="nav-container">
+            <a href="all.html" class="logo">SILENTBYTE</a>
+            <ul class="nav-links">
+                <li><a href="all.html">ВСЕ</a></li>
+                <li><a href="translit.html" class="active">ТРАНСЛИТ</a></li>
+                <li><a href="base64.html">BASE64</a></li>
+                <li><a href="inv.html">INVISIBLE</a></li>
+                <li><a href="pass.html">PASSWORD</a></li>
+                <li><a href="ascii.html">ASCII</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero секция -->
+    <section class="hero">
+        <h1 class="glitch" data-text="ТРАНСЛИТ">ТРАНСЛИТ</h1>
+        <p>Кириллица → Латиница</p>
+    </section>
+
+    <!-- Основной контент -->
+    <div class="container">
+        <div class="tools-grid single">
+            
+            <!-- Транслит -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">Т</div>
+                    <div class="tool-title">ТРАНСЛИТЕРАЦИЯ</div>
+                </div>
+                <div class="tool-body">
+                    <div class="input-group">
+                        <label>Русский текст</label>
+                        <textarea id="translit-input" placeholder="Введите текст кириллицей..."></textarea>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Стандарт</label>
+                        <select id="translit-std">
+                            <option value="gost">ГОСТ 7.79-2000</option>
+                            <option value="passport">Загранпаспорт</option>
+                            <option value="yandex">Яндекс.Деньги</option>
+                            <option value="telegram">Межд. телеграммы</option>
+                            <option value="usa">Госдеп США</option>
+                        </select>
+                    </div>
+
+                    <button class="btn" onclick="transliterate()">ПРЕОБРАЗОВАТЬ</button>
+                    
+                    <div class="result-box" id="translit-result"></div>
+                    
+                    <button class="btn secondary" onclick="copyResult('translit-result')" style="margin-top: 10px;">
+                        КОПИРОВАТЬ
+                    </button>
+
+                    <table class="translit-table" style="margin-top: 30px; font-size: 8px;">
+                        <thead>
+                            <tr>
+                                <th>Буква</th>
+                                <th>ГОСТ</th>
+                                <th>Паспорт</th>
+                                <th>Яндекс</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>ж</td><td>zh</td><td>zh</td><td>zh</td></tr>
+                            <tr><td>й</td><td>j</td><td>i</td><td>y</td></tr>
+                            <tr><td>х</td><td>x</td><td>kh</td><td>kh</td></tr>
+                            <tr><td>ц</td><td>c</td><td>ts</td><td>ts</td></tr>
+                            <tr><td>щ</td><td>shh</td><td>shch</td><td>sch</td></tr>
+                            <tr><td>ъ</td><td>``</td><td>ie</td><td>-</td></tr>
+                            <tr><td>ы</td><td>y`</td><td>y</td><td>y</td></tr>
+                            <tr><td>ь</td><td>`</td><td>-</td><td>-</td></tr>
+                            <tr><td>э</td><td>e`</td><td>e</td><td>e</td></tr>
+                            <tr><td>ю</td><td>yu</td><td>iu</td><td>yu</td></tr>
+                            <tr><td>я</td><td>ya</td><td>ia</td><td>ya</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">Скопировано!</div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-title">[ SILENTBYTE v3.4 ]</div>
+            <div class="copyright">
+                © 2026 МУЛЬТИ-ИНСТРУМЕНТ <br>
+            </div>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="translit.js"></script>
+</body>
+</html>

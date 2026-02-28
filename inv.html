@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVISIBLE | SILENTBYTE</title>
+    <link rel="icon" type="image/png" href="avatar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="crt">
+    <div class="scanline"></div>
+    <div class="pixel-bg"></div>
+    <canvas id="molecule-canvas"></canvas>
+
+    <!-- Навигация -->
+    <nav>
+        <div class="nav-container">
+            <a href="all.html" class="logo">SILENTBYTE</a>
+            <ul class="nav-links">
+                <li><a href="all.html">ВСЕ</a></li>
+                <li><a href="translit.html">ТРАНСЛИТ</a></li>
+                <li><a href="base64.html">BASE64</a></li>
+                <li><a href="inv.html" class="active">INVISIBLE</a></li>
+                <li><a href="pass.html">PASSWORD</a></li>
+                <li><a href="ascii.html">ASCII</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero секция -->
+    <section class="hero">
+        <h1 class="glitch" data-text="INVISIBLE">INVISIBLE</h1>
+        <p>Невидимый Unicode символ</p>
+    </section>
+
+    <!-- Основной контент -->
+    <div class="container">
+        <div class="tools-grid single">
+            
+            <!-- Invisible Character -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon" style="background: #9932cc; font-size: 12px;"> INV </div>
+                    <div class="tool-title">НЕВИДИМЫЙ СИМВОЛ</div>
+                </div>
+                <div class="tool-body">
+                    <div class="input-group">
+                        <label>Unicode: U+3164 | Hangul Filler</label>
+                        <div class="result-box" id="invisible-preview" style="text-align: center; font-size: 20px; min-height: 50px; display: flex; align-items: center; justify-content: center;"></div>
+                    </div>
+
+                    <button class="btn" onclick="copyInvisibleChar()" style="background: #a970ff;"> 
+                        СКОПИРОВАТЬ
+                    </button>
+
+                    <div style="background: rgba(145, 70, 255, 0.1); border-left: 4px solid var(--twitch); padding: 15px; margin-top: 15px; font-size: 9px; line-height: 1.8; color: rgba(240, 246, 240, 0.8);">
+                        <strong style="color: rgba(240, 246, 240, 0.9);">ИНФО:</strong> U+3164 (Hangul Filler) — это невидимый символ из корейского алфавита. 
+                        Он используется для создания пустых сообщений, невидимых никнеймов или обхода проверок на пустоту полей.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">Скопировано!</div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-title">[ SILENTBYTE v3.4 ]</div>
+            <div class="copyright">
+                © 2026 МУЛЬТИ-ИНСТРУМЕНТ <br>
+            </div>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="invisible.js"></script>
+    <script>
+        previewInvisibleChar();
+    </script>
+</body>
+</html>

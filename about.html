@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT | SILENTBYTE</title>
+    <link rel="icon" type="image/png" href="avatar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Двухколоночный layout */
+        .tools-grid.double {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1200px;
+        }
+
+        /* Стили для контактной секции из about2 */
+        .contact-card {
+            background: var(--pixel-bg, #1a1a2e);
+            border: 4px solid var(--twitch-dark, #5c16c5);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 8px 8px 0 rgba(145, 70, 255, 0.3);
+            height: 100%;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(240, 246, 240, 0.05), transparent);
+            transition: left 0.5s;
+        }
+
+        .contact-card:hover::before {
+            left: 100%;
+        }
+
+        .card-header {
+            background: rgba(145, 70, 255, 0.2);
+            padding: 20px;
+            border-bottom: 2px solid var(--twitch-dark, #5c16c5);
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 14px;
+            color: var(--arctic, #f0f6f0);
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .card-body {
+            padding: 30px 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--arctic, #f0f6f0);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .social-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--twitch-dark, #5c16c5);
+            border: 3px solid var(--twitch, #9146ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 10px;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link:hover .social-icon {
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3), 0 0 30px rgba(145, 70, 255, 0.8);
+            background: var(--twitch, #9146ff);
+        }
+
+        .social-link:active .social-icon {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .social-label {
+            font-size: 10px;
+            color: rgba(240, 246, 240, 0.8);
+            transition: all 0.3s;
+        }
+
+        .social-link:hover .social-label {
+            color: var(--twitch, #9146ff);
+            text-shadow: 0 0 10px rgba(145, 70, 255, 0.6);
+        }
+
+        .social-link.telegram:hover .social-icon {
+            background: #0088cc;
+            border-color: #0088cc;
+            box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 136, 204, 0.6);
+        }
+
+        .social-link.telegram:hover .social-label {
+            color: #0088cc;
+            text-shadow: 0 0 10px rgba(0, 136, 204, 0.6);
+        }
+
+        .social-link.github:hover .social-icon {
+            background: #ffffff;
+            border-color: #ffffff;
+            box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.4);
+        }
+
+        .social-link.github:hover .social-icon svg {
+            fill: #0d0d0d;
+        }
+
+        .social-link.github:hover .social-label {
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--twitch, #9146ff), transparent);
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '<>';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--pixel-bg, #1a1a2e);
+            padding: 0 15px;
+            color: var(--twitch, #9146ff);
+            font-size: 10px;
+        }
+
+        .email-section {
+            text-align: center;
+        }
+
+        .email-label {
+            font-size: 10px;
+            color: rgba(240, 246, 240, 0.8);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .email-display {
+            background: var(--void, #0d0d0d);
+            border: 3px solid var(--twitch, #9146ff);
+            padding: 15px;
+            font-family: 'VT323', monospace;
+            font-size: 20px;
+            color: var(--arctic, #f0f6f0);
+            display: inline-block;
+            min-width: 280px;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+            user-select: all;
+        }
+
+        .email-display:hover {
+            border-color: #a970ff;
+            box-shadow: 0 0 20px rgba(145, 70, 255, 0.6), 4px 4px 0 rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .email-hint {
+            font-size: 8px;
+            color: rgba(240, 246, 240, 0.5);
+            margin-top: 10px;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--twitch, #9146ff);
+            color: var(--arctic, #f0f6f0);
+            padding: 15px 25px;
+            font-size: 10px;
+            box-shadow: 0 0 20px rgba(145, 70, 255, 0.6);
+            transform: translateX(400px);
+            transition: transform 0.3s;
+            z-index: 2000;
+            border: 2px solid var(--arctic, #f0f6f0);
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        /* Адаптивность для мобильных */
+        @media (max-width: 900px) {
+            .tools-grid.double {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .social-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 28px;
+            }
+
+            .email-display {
+                min-width: 250px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body class="crt">
+    <div class="scanline"></div>
+    <div class="pixel-bg"></div>
+    <canvas id="molecule-canvas"></canvas>
+
+    <!-- Навигация -->
+    <nav>
+        <div class="nav-container">
+            <a href="all.html" class="logo">SILENTBYTE</a>
+            <ul class="nav-links">
+                <li><a href="all.html">ВСЕ</a></li>
+                <li><a href="translit.html">ТРАНСЛИТ</a></li>
+                <li><a href="base64.html">BASE64</a></li>
+                <li><a href="inv.html">INVISIBLE</a></li>
+                <li><a href="pass.html">PASSWORD</a></li>
+                <li><a href="ascii.html">ASCII</a></li>
+                <li><a href="about.html" class="active">ABOUT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero секция -->
+    <section class="hero">
+        <h1 class="glitch" data-text="ABOUT">ABOUT</h1>
+        <p>О проекте SILENTBYTE</p>
+    </section>
+
+    <!-- Основной контент -->
+    <div class="container">
+        <div class="tools-grid double">
+            
+            <!-- Левая колонка: О ПРОЕКТЕ -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon" style="background: #9146ff; font-size: 12px;">?</div>
+                    <div class="tool-title">О ПРОЕКТЕ</div>
+                </div>
+                <div class="tool-body">
+                    <p style="font-family: 'VT323', monospace; font-size: 20px; line-height: 1.6; color: rgba(240, 246, 240, 0.9); margin-bottom: 20px;">
+                        SILENTBYTE — это набор полезных инструментов для разработчиков и обычных пользователей.
+                    </p>
+                    
+                    <h3 style="font-size: 12px; color: var(--twitch); margin: 20px 0 10px;">[ ДОСТУПНЫЕ ИНСТРУМЕНТЫ ]</h3>
+                    
+                    <ul style="font-family: 'VT323', monospace; font-size: 18px; line-height: 1.8; color: rgba(240, 246, 240, 0.8); list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;">📋 <strong style="color: var(--arctic);">Транслитерация</strong> — перевод русского текста в латиницу по различным стандартам</li>
+                        <li style="margin-bottom: 10px;">🔐 <strong style="color: var(--arctic);">Base64</strong> — кодирование и декодирование данных</li>
+                        <li style="margin-bottom: 10px;">👁️ <strong style="color: var(--arctic);">Invisible Char</strong> — невидимый символ U+3164</li>
+                        <li style="margin-bottom: 10px;">🔑 <strong style="color: var(--arctic);">Password Gen</strong> — генератор надёжных паролей</li>
+                        <li style="margin-bottom: 10px;">🎨 <strong style="color: var(--arctic);">ASCII Art</strong> — создание текстовых артов</li>
+                    </ul>
+
+                    <h3 style="font-size: 12px; color: var(--twitch); margin: 20px 0 10px;">[ ТЕХНОЛОГИИ ]</h3>
+                    
+                    <p style="font-family: 'VT323', monospace; font-size: 18px; line-height: 1.6; color: rgba(240, 246, 240, 0.8);">
+                        HTML5 • CSS3 • Vanilla JavaScript • Canvas API
+                    </p>
+
+                    <h3 style="font-size: 12px; color: var(--twitch); margin: 20px 0 10px;">[ ВЕРСИЯ ]</h3>
+                    
+                    <p style="font-family: 'VT323', monospace; font-size: 18px; line-height: 1.6; color: rgba(240, 246, 240, 0.8);">
+                        v3.4 — 2026
+                    </p>
+                </div>
+            </div>
+
+            <!-- Правая колонка: СВЯЗЬ -->
+            <div class="contact-card">
+                <div class="card-header">
+                    <div class="card-title">[ СВЯЗЬ ]</div>
+                </div>
+                <div class="card-body">
+
+                    <!-- Социальные ссылки -->
+                    <div class="social-links">
+                        <!-- Telegram -->
+                        <a href="https://github.com/firte1337" class="social-link telegram" target="_blank" rel="noopener noreferrer">
+                            <div class="social-icon">
+                                <svg width="35" height="35" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                                </svg>
+                            </div>
+                            <span class="social-label">TELEGRAM</span>
+                        </a>
+
+                        <!-- GitHub -->
+                        <a href="https://github.com/firte1337" class="social-link github" target="_blank" rel="noopener noreferrer">
+                            <div class="social-icon">
+                                <svg width="35" height="35" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </div>
+                            <span class="social-label">GITHUB</span>
+                        </a>
+                    </div>
+
+                    <!-- Разделитель -->
+                    <div class="divider"></div>
+
+                    <!-- Email секция -->
+                    <div class="email-section">
+                        <span class="email-label">ИЛИ НАПИШИТЕ НА ПОЧТУ:</span>
+                        <div class="email-display" onclick="copyEmail()">
+                            pokanet@pochti.ymenya
+                        </div>
+                        <div class="email-hint">[ НАЖМИТЕ ЧТОБЫ СКОПИРОВАТЬ ]</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">СКОПИРОВАНО!</div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-title">[ SILENTBYTE v3.4 ]</div>
+            <div class="copyright">
+                © 2026 МУЛЬТИ-ИНСТРУМЕНТ <br>
+            </div>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+    <script>
+        // Toast notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2000);
+        }
+
+        // Copy email function
+        function copyEmail() {
+            const email = 'your.email@example.com';
+            navigator.clipboard.writeText(email).then(() => {
+                showToast('ПОЧТА СКОПИРОВАНА!');
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = email;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast('ПОЧТА СКОПИРОВАНА!');
+            });
+        }
+    </script>
+</body>
+</html>

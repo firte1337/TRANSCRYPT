@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASE64 | SILENTBYTE</title>
+    <link rel="icon" type="image/png" href="avatar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="crt">
+    <div class="scanline"></div>
+    <div class="pixel-bg"></div>
+    <canvas id="molecule-canvas"></canvas>
+
+    <!-- Навигация -->
+    <nav>
+        <div class="nav-container">
+            <a href="all.html" class="logo">SILENTBYTE</a>
+            <ul class="nav-links">
+                <li><a href="all.html">ВСЕ</a></li>
+                <li><a href="translit.html">ТРАНСЛИТ</a></li>
+                <li><a href="base64.html" class="active">BASE64</a></li>
+                <li><a href="inv.html">INVISIBLE</a></li>
+                <li><a href="pass.html">PASSWORD</a></li>
+                <li><a href="ascii.html">ASCII</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero секция -->
+    <section class="hero">
+        <h1 class="glitch" data-text="BASE64">BASE64</h1>
+        <p>Кодирование и декодирование</p>
+    </section>
+
+    <!-- Основной контент -->
+    <div class="container">
+        <div class="tools-grid single">
+            
+            <!-- Base64 -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon" style="background: #a970ff; font-size: 16px;">64</div>
+                    <div class="tool-title">BASE64 КОДИРОВАНИЕ</div>
+                </div>
+                <div class="tool-body">
+                    <div class="input-group">
+                        <label>Исходный текст</label>
+                        <textarea id="base64-input" placeholder="Введите текст для кодирования..."></textarea>
+                    </div>
+
+                    <div class="btn-row">
+                        <button class="btn" onclick="base64Encode()" style="flex: 1;">КОДИРОВАТЬ</button>
+                        <button class="btn secondary" onclick="base64Decode()" style="flex: 1;">ДЕКОДИРОВАТЬ</button>
+                    </div>
+
+                    <div class="result-box" id="base64-result"></div>
+                    
+                    <button class="btn secondary" onclick="copyResult('base64-result')" style="margin-top: 10px;">
+                        КОПИРОВАТЬ
+                    </button>
+
+                    <div style="background: rgba(145, 70, 255, 0.1); border-left: 4px solid var(--twitch); padding: 15px; margin-top: 15px; font-size: 9px; line-height: 1.8; color: rgba(240, 246, 240, 0.8);">
+                        <strong style="color: rgba(240, 246, 240, 0.9);">ИНФО:</strong> Base64 — схема кодирования двоичных данных в ASCII. 
+                        Каждый символ представляет 6 бит. Используется для передачи данных 
+                        через системы, не поддерживающие 8-битные символы.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">Скопировано!</div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-title">[ SILENTBYTE v3.4 ]</div>
+            <div class="copyright">
+                © 2026 МУЛЬТИ-ИНСТРУМЕНТ <br>
+            </div>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="base64.js"></script>
+</body>
+</html>
