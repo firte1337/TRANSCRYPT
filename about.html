@@ -337,15 +337,14 @@
                     <!-- Разделитель -->
                     <div class="divider"></div>
 
-                    <!-- telegram direct секция -->
-                    <div class="telegram-section">
-   <div class="telegram-section">
-    <span class="telegram-label">ИЛИ ПИШИТЕ В ТЕЛЕГРАМ:</span>
-    <div class="email-display" onclick="openTelegram()">
-        direct
-    </div>
-    <div class="email-hint">[ НАЖМИТЕ ЧТОБЫ ОТКРЫТЬ ]</div>
-</div>
+                <!-- Email секция -->
+                    <div class="email-section">
+                        <span class="email-label">ИЛИ НАПИШИТЕ НА ПОЧТУ А ЛУЧШЕ В ТЕЛЕГРАМ ДИРЕКТ:</span>
+                        <div class="email-display" onclick="copyEmail()">
+                            https://t.me/fierte1337?direct
+                        </div>
+                        <div class="email-hint">[ НАЖМИТЕ ЧТОБЫ СКОПИРОВАТЬ ]</div>
+                    </div>
 
                 </div>
             </div>
@@ -379,9 +378,22 @@
         }
 
         // Copy email function
-        function openTelegram() {
-    window.open('https://t.me/fierte1337?direct', '_blank');
-}
+    // Copy email function
+        function copyEmail() {
+            const email = 'https://t.me/fierte1337?direct';
+            navigator.clipboard.writeText(email).then(() => {
+                showToast('DIRECT СКОПИРОВАНА!');
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = email;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast('DIRECT СКОПИРОВАНА!');
+            });
+        }
     </script>
 </body>
 </html>
