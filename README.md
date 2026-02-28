@@ -1,90 +1,68 @@
-<div align="center">
+```bash
+┌──(root㉿kali)-[~/tools/silentbyte]
+└─$ ./silentbyte
 
-# ░▒▓ SILENTBYTE ▓▒░
-### digital toolkit // client-side arsenal
-version: 3.3
-build: 2026
-mode: stable
-runtime: browser
+   ███████╗██╗██╗     ███████╗███╗   ██╗████████╗██████╗ ██╗   ██╗████████╗███████╗
+   ██╔════╝██║██║     ██╔════╝████╗  ██║╚══██╔══╝██╔══██╗╚██╗ ██╔╝╚══██╔══╝██╔════╝
+   ███████╗██║██║     █████╗  ██╔██╗ ██║   ██║   ██████╔╝ ╚████╔╝    ██║   █████╗
+   ╚════██║██║██║     ██╔══╝  ██║╚██╗██║   ██║   ██╔══██╗  ╚██╔╝     ██║   ██╔══╝
+   ███████║██║███████╗███████╗██║ ╚████║   ██║   ██████╔╝   ██║      ██║   ███████╗
+   ╚══════╝╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═════╝    ╚═╝      ╚═╝   ╚══════╝
 
-</div>
+SILENTBYTE — client-side offensive/utility toolkit
+version 3.3 (2026)
+status: stable
+┌──(root㉿kali)-[~/tools/silentbyte]
+└─$ ./silentbyte help
+Usage: silentbyte [command]
 
----
+Available commands:
 
-## // about
+  help        show this help message
+  install     initialize local environment
+  update      simulate version update
+  list        show available modules
+  run         start toolkit runtime
+┌──(root㉿kali)-[~/tools/silentbyte]
+└─$ ./silentbyte install
+[+] Checking environment...
+[+] Browser runtime detected
+[+] No backend required
+[+] No dependencies required
+[+] Initializing modules...
 
-SILENTBYTE — это автономный набор веб-инструментов  
-для разработчиков, энтузиастов и тех, кто ценит контроль.
+[ OK ] transliteration
+[ OK ] base64
+[ OK ] invisible_char
+[ OK ] password_gen
+[ OK ] ascii_art
 
-Никаких серверов.  
-Никакой телеметрии.  
-Только чистый клиентский код.
+[✓] Installation complete
+┌──(root㉿kali)-[~/tools/silentbyte]
+└─$ ./silentbyte update
+[+] Fetching latest build metadata...
+[+] Current version: 3.3
+[+] Checking remote signature...
+[-] Remote server: not configured
+[!] Client-side standalone mode enabled
+[✓] You are running the latest version
+┌──(root㉿kali)-[~/tools/silentbyte]
+└─$ ./silentbyte list
+01  transliteration   ru → latin (multi-standard)
+02  base64            encode / decode
+03  invisible_char    unicode U+3164
+04  password_gen      secure random generator
+05  ascii_art         text → canvas render
+┌──(root㉿kali)-[~/tools/silentbyte]
+└─$ ./silentbyte run
+[+] Launching browser execution context...
+[+] Loading HTML5
+[+] Loading CSS3
+[+] Loading Vanilla JavaScript
+[+] Initializing Canvas API
 
----
+[ OK ] Runtime ready
+[ OK ] All operations local
+[ OK ] No outbound traffic
 
-## // modules
-01] transliteration
-↳ ru → latin (multiple standards)
-
-[02] base64
-↳ encode / decode data streams
-
-[03] invisible_char
-↳ U+3164 (hangul filler)
-
-[04] password_gen
-↳ secure random generator
-
-[05] ascii_art
-↳ text → canvas render
-
----
-
-## // stack
-HTML5
-CSS3
-Vanilla JavaScript
-Canvas API
-
-Zero frameworks.  
-Zero dependencies.  
-Zero backend.
-
----
-
-## // philosophy
-
-- lightweight architecture  
-- deterministic behavior  
-- fast execution  
-- minimal surface area  
-- clean source code  
-
----
-
-## // execution model
-user input
-↓
-pure js logic
-↓
-instant output
-
-Everything runs locally.  
-Nothing leaves the browser.
-
----
-
-## // structure
-/core
-/modules
-/assets
-/index.html
-
----
-
-<div align="center">
-
-> silence is power  
-> byte is control  
-
-</div>
+root@kali:~/tools/silentbyte$ _
