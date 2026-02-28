@@ -1,83 +1,90 @@
 <div align="center">
-plain
-Copy
-╔═══════════════════════════════════════════════════════════╗
-║  ███████╗██╗██╗     ███████╗███╗   ██╗████████╗██████╗ ██╗   ██╗████████╗███████╗  ║
-║  ██╔════╝██║██║     ██╔════╝████╗  ██║╚══██╔══╝██╔══██╗╚██╗ ██╔╝╚══██╔══╝██╔════╝  ║
-║  ███████╗██║██║     █████╗  ██╔██╗ ██║   ██║   ██████╔╝ ╚████╔╝    ██║   █████╗    ║
-║  ╚════██║██║██║     ██╔══╝  ██║╚██╗██║   ██║   ██╔══██╗  ╚██╔╝     ██║   ██╔══╝    ║
-║  ███████║██║███████╗███████╗██║ ╚████║   ██║   ██████╔╝   ██║      ██║   ███████╗  ║
-║  ╚══════╝╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═════╝    ╚═╝      ╚═╝   ╚══════╝  ║
-╚═══════════════════════════════════════════════════════════╝
-⚡ Мульти-инструмент для разработчиков и не только
-https://developer.mozilla.org/ru/docs/Web/HTML
-https://developer.mozilla.org/ru/docs/Web/CSS
-https://developer.mozilla.org/ru/docs/Web/JavaScript
-https://developer.mozilla.org/ru/docs/Web/API/Canvas_API
+
+# ░▒▓ SILENTBYTE ▓▒░
+### digital toolkit // client-side arsenal
+version: 3.3
+build: 2026
+mode: stable
+runtime: browser
+
 </div>
-📦 Доступные инструменты
-Table
-Инструмент	Описание	Статус
-🔄 Транслитерация	Перевод русского текста в латиницу по различным стандартам	✅ Готово
-🔐 Base64	Кодирование и декодирование данных в реальном времени	✅ Готово
-👁️ Invisible Char	Невидимый символ U+3164 для креативных задач	✅ Готово
-🔑 Password Gen	Генератор надёжных паролей с индикатором силы	✅ Готово
-🎨 ASCII Art	Создание текстовых артов из вашего текста	✅ Готово
-🎨 Дизайн
-Pixel Cyberpunk Edition — футуристичный интерфейс в стиле киберпанк с фирменной цветовой палитрой:
-Table
-Цвет	HEX	Использование
-💜 Purple	#9146ff	Основной акцент
-💜 Dark Purple	#5c16c5	Границы, тени
-🤍 Arctic White	#f0f6f0	Текст
-🖤 Void Black	#0d0d0d	Фон
-💚 Neon Green	#00ff88	Успех, сильный пароль
-❤️ Neon Red	#ff0040	Ошибки, слабый пароль
-✨ Фичи
-🔄 Транслитерация
-5 стандартов: ГОСТ 7.79-2000, Загранпаспорт, Яндекс, Телеграммы, Госдеп США
-Таблица соответствия прямо в интерфейсе
-Мгновенное преобразование
-🔐 Base64
-Кодирование / Декодирование в реальном времени
-Поддержка Unicode (кириллица)
-Информативный блок о технологии
-👁️ Invisible Char (U+3164)
-Мгновенное копирование невидимого символа
-Полезно для креативного форматирования
-Информация о юникод-стандарте
-🔑 Password Generator
-Настраиваемая длина: 8-64 символов
-4 типа символов: верхний/нижний регистр, цифры, спецсимволы
-Индикатор силы пароля (Weak/Medium/Strong)
-Гарантированное включение выбранных типов символов
-🎨 ASCII Art Generator
-4 уникальных шрифта: Standard, Block, Small, Banner
-Мгновенный превью
-Идеально для коммитов и документации
-🚀 Быстрый старт
-bash
-Copy
-# Клонировать репозиторий
-git clone https://github.com/username/silentbyte.git
 
-# Перейти в папку
-cd silentbyte
+---
 
-# Открыть в браузере (или просто откройте index.html)
-open index.html
-🛠 Технологии
-HTML5 — семантическая разметка
-CSS3 — современные стили, анимации, grid/flexbox
-Vanilla JavaScript — чистый JS без зависимостей
-Canvas API — для ASCII Art рендеринга
-📋 Требования
-Современный браузер с поддержкой ES6+
-JavaScript включён
-Разрешение экрана: 320px+
-📄 Лицензия
-MIT License — свободное использование для любых целей.
+## // about
+
+SILENTBYTE — это автономный набор веб-инструментов  
+для разработчиков, энтузиастов и тех, кто ценит контроль.
+
+Никаких серверов.  
+Никакой телеметрии.  
+Только чистый клиентский код.
+
+---
+
+## // modules
+01] transliteration
+↳ ru → latin (multiple standards)
+
+[02] base64
+↳ encode / decode data streams
+
+[03] invisible_char
+↳ U+3164 (hangul filler)
+
+[04] password_gen
+↳ secure random generator
+
+[05] ascii_art
+↳ text → canvas render
+
+---
+
+## // stack
+HTML5
+CSS3
+Vanilla JavaScript
+Canvas API
+
+Zero frameworks.  
+Zero dependencies.  
+Zero backend.
+
+---
+
+## // philosophy
+
+- lightweight architecture  
+- deterministic behavior  
+- fast execution  
+- minimal surface area  
+- clean source code  
+
+---
+
+## // execution model
+user input
+↓
+pure js logic
+↓
+instant output
+
+Everything runs locally.  
+Nothing leaves the browser.
+
+---
+
+## // structure
+/core
+/modules
+/assets
+/index.html
+
+---
+
 <div align="center">
-[ v3.4 — 2026 ]
-Made with 💜 and caffeine
+
+> silence is power  
+> byte is control  
+
 </div>
