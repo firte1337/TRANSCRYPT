@@ -341,7 +341,7 @@
                     <div class="email-section">
                         <span class="email-label">ИЛИ НАПИШИТЕ НА ПОЧТУ А ЛУЧШЕ В ТЕЛЕГРАМ ДИРЕКТ:</span>
                         <div class="email-display" onclick="copyEmail()">
-                            https://t.me/fierte1337?direct
+                            POChTY.NET@PIShI.VTGDIREKT
                         </div>
                         <div class="email-hint">[ НАЖМИТЕ ЧТОБЫ СКОПИРОВАТЬ ]</div>
                     </div>
@@ -382,7 +382,7 @@
         function copyEmail() {
             const email = 'https://t.me/fierte1337?direct';
             navigator.clipboard.writeText(email).then(() => {
-                showToast('DIRECT СКОПИРОВАНА!');
+                showToast('DIRECT / ПОЧТА СКОПИРОВАН(А)!');
             }).catch(() => {
                 // Fallback for older browsers
                 const textArea = document.createElement('textarea');
@@ -391,7 +391,7 @@
                 textArea.select();
                 document.execCommand('copy');
                 document.body.removeChild(textArea);
-                showToast('DIRECT СКОПИРОВАНА!');
+                showToast('DIRECT / ПОЧТА СКОПИРОВАН(А)!');
             });
         }
     </script>
